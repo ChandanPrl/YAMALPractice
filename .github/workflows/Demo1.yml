@@ -11,23 +11,9 @@ jobs:
       - run: ls ~
       - run: ls ${{github.workspace}}
   Job-Message-Actions-Windows:
-  runs-on: windows-latest
-  steps:
-    - name: Get List of Firewall Inbound Rules
-      shell: pwsh
-      run: |
-        Get-NetFirewallRule -Direction Inbound    
-  Testing-Job-onMac:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
-      - name: Check out Current Repository
-        uses: actions/checkout@v3
-
-      - name: Install Github CLI
+      - name: Get List of Firewall Inbound Rules
+        shell: pwsh
         run: |
-          brew update
-          brew install gh
-      - name: Install Microsoft Edge
-        run: |
-          brew update
-          brew install --cask microsoft-edge      
+          Get-NetFirewallRule -Direction Inbound    

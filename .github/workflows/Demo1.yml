@@ -11,9 +11,9 @@ jobs:
       - run: ls ~
       - run: ls ${{github.workspace}}
   Job-Message-Actions-Windows:
-  runs-on: windows-latest
-  steps:
-    - name: Get List of Firewall Inbound Rules
-      shell: pwsh
-      run: |
-        Get-NetFirewallRule -Direction Inbound    
+    runs-on: windows-latest
+    steps:
+      - name: Get List of Firewall Inbound Rules
+        shell: pwsh
+        run: |
+          Get-NetFirewallRule -Direction Inbound    
